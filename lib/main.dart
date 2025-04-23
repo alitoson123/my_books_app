@@ -16,6 +16,7 @@ class MyBooks extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: backgroudColor,
+        brightness: Brightness.light,
       ),
       home: SplashView(),
     );

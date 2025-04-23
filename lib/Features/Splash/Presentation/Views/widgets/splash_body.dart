@@ -6,8 +6,15 @@ class SplahBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Image.asset(Images.logo),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Image.asset(Images.logo),
+        Padding(
+          padding: const EdgeInsets.all(5),
+          child: Text('Read free books'),
+        ),
+      ],
     );
   }
 }
