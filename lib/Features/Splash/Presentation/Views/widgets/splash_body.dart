@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:my_books/Features/Splash/Presentation/Views/widgets/animation_text..dart';
+import 'package:my_books/Features/home/Presentation/Views/home_view.dart';
 import 'package:my_books/constants.dart';
 
 class SplahBody extends StatefulWidget {
@@ -18,6 +20,7 @@ class _SplahBodyState extends State<SplahBody>
   void initState() {
     super.initState();
     animationMethod();
+    navigatorMethod();
   }
 
   @override
@@ -31,7 +34,10 @@ class _SplahBodyState extends State<SplahBody>
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.asset(Images.logo),
+        Image.asset(
+          Images.logo,
+          width: 250,
+        ),
         AnimationText(animation: animation),
       ],
     );
@@ -40,8 +46,16 @@ class _SplahBodyState extends State<SplahBody>
   void animationMethod() {
     controller =
         AnimationController(vsync: this, duration: const Duration(seconds: 1));
-    animation = Tween<Offset>(begin: const Offset(0, 5), end: Offset.zero)
-        .animate(controller);
+    animation =
+        Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero).animate(
+      controller,
+    );
     controller.forward();
+  }
+
+  void navigatorMethod() {
+    Future.delayed(Duration(seconds: 2), () {
+      Get.to(HomeView(), transition: Transition.fadeIn, duration: Kduration);
+    });
   }
 }
