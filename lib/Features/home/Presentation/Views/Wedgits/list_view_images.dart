@@ -12,7 +12,7 @@ class ListViewImages extends StatelessWidget {
         itemCount: 5,
         itemBuilder: (context, index) {
           return Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.only(right: index == 4 ? 0 : 12),
             child: Container(
               width: 170,
               decoration: BoxDecoration(
