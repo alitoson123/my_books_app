@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_books/Features/home/Presentation/Views/Wedgits/list_view_images.dart';
 import 'package:my_books/constants.dart';
 
 class HomeView extends StatelessWidget {
@@ -21,6 +22,12 @@ class HomeView extends StatelessWidget {
           ],
         ),
       ),
+      body: Column(
+        children: [
+          ListViewImages(),
+        ],
+      ),
     );
   }
 }
+
