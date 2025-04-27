@@ -6,7 +6,7 @@ class ListViewImages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 275,
+      height: 245,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: 5,
@@ -14,7 +14,7 @@ class ListViewImages extends StatelessWidget {
           return Padding(
             padding: EdgeInsets.only(right: index == 4 ? 0 : 12),
             child: Container(
-              width: 170,
+              width: 150,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
                   image: DecorationImage(
