@@ -6,8 +6,17 @@ class Images {
 }
 
 class Style {
-  static const textStyle22 = TextStyle(
-      fontSize: 22, fontWeight: FontWeight.w600);
+  static const textStyle16 = TextStyle(
+    fontSize: 16,
+  );
+
+  static const textStyle20 = TextStyle(
+    fontWeight: FontWeight.bold,
+    fontSize: 20,
+  );
+
+  static const textStyle22 =
+      TextStyle(fontSize: 22, fontWeight: FontWeight.w600);
 }
 
 const KbackgroudColor = Color(0xffFBFDFB);

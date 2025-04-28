@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_books/Features/home/Presentation/Views/Wedgits/image_container.dart';
 
 class ListViewImages extends StatelessWidget {
   const ListViewImages({super.key});
@@ -13,14 +14,9 @@ class ListViewImages extends StatelessWidget {
         itemBuilder: (context, index) {
           return Padding(
             padding: EdgeInsets.only(right: index == 4 ? 0 : 12),
-            child: Container(
-              width: 150,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage(
-                          'assets/Images/81BE7eeKzAL._AC_UY327_FMwebp_QL65_.webp'))),
+            child: ImageContainer(
+              myImage: 'assets/Images/81BE7eeKzAL._AC_UY327_FMwebp_QL65_.webp',
+              myWidth: 150,
             ),
           );
         },
