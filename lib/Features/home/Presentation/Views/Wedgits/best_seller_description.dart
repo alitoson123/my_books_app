@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:my_books/Features/home/Presentation/Views/Wedgits/book_price_and_rating.dart';
 import 'package:my_books/constants.dart';
 
-class BookDescription extends StatelessWidget {
-  const BookDescription({super.key});
+class BestSellerDescription extends StatelessWidget {
+  const BestSellerDescription({super.key});
 
   @override
   Widget build(BuildContext context) {

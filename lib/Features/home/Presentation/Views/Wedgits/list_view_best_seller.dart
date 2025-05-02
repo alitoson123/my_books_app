@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_books/Features/home/Presentation/Views/Wedgits/book_description.dart';
+import 'package:my_books/Features/home/Presentation/Views/Wedgits/best_seller_description.dart';
 import 'package:my_books/Features/home/Presentation/Views/Wedgits/image_container.dart';
 
 class ListViewBestSeller extends StatelessWidget {
@@ -27,7 +27,7 @@ class ListViewBestSeller extends StatelessWidget {
             SizedBox(
               width: 30,
             ),
-            BookDescription(),
+            BestSellerDescription(),
           ],
         );
       },

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import 'package:my_books/Features/Splash/Presentation/Views/widgets/animation_text..dart';
-import 'package:my_books/Features/home/Presentation/Views/home_view.dart';
 import 'package:my_books/constants.dart';
 
 class SplahBody extends StatefulWidget {
@@ -54,8 +53,12 @@ class _SplahBodyState extends State<SplahBody>
   }
 
   void navigatorMethod() {
-    Future.delayed(Duration(seconds: 2), () {
-      Get.to(HomeView(), transition: Transition.fadeIn, duration: Kduration);
-    });
+    Future.delayed(
+      Duration(seconds: 2),
+      () {
+        // Get.to(HomeView(), transition: Transition.fadeIn, duration: Kduration);
+        GoRouter.of(context).push(KHomePath);
+      },
+    );
   }
 }
