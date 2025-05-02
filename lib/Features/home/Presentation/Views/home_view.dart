@@ -12,22 +12,30 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       appBar: myAppBar(),
       body: Padding(
-        padding: const EdgeInsets.only(left: 20 ,right: 20,top: 7,bottom: 7),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ListViewImages(),
-            SizedBox(
-              height: 20,
+        padding: const EdgeInsets.only(left: 20, right: 20, top: 7, bottom: 7),
+        child: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ListViewImages(),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    'Best seller',
+                    style: Style.textStyle22,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                ],
+              ),
             ),
-            Text(
-              'Best seller',
-              style: Style.textStyle22,
-            ),
-            SizedBox(
-              height: 10,
-            ),
-         ListViewBestSeller()
+            SliverFillRemaining(
+              child: ListViewBestSeller(),
+            )
           ],
         ),
       ),
