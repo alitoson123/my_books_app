@@ -2,19 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:my_books/constants.dart';
 
 class BookPriceAndRating extends StatelessWidget {
-  const BookPriceAndRating({super.key});
-
+  const BookPriceAndRating({
+    super.key,
+    this.mainAxisAlignment = MainAxisAlignment.start,
+  });
+  final MainAxisAlignment mainAxisAlignment;
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: mainAxisAlignment,
       children: [
-        Text(
-          '19.99 \$',
-          style: Style.textStyle20,
-        ),
-        SizedBox(
-          width: 30,
-        ),
+        
         Icon(
           Icons.star,
           color: Color(0xffFDD835),

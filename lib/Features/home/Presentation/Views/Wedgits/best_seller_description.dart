@@ -31,7 +31,18 @@ class BestSellerDescription extends StatelessWidget {
         SizedBox(
           height: 3,
         ),
-        BookPriceAndRating(),
+        Row(
+          children: [
+            Text(
+          '19.99 \$',
+          style: Style.textStyle20,
+        ),
+        SizedBox(
+          width: 30,
+        ),
+            BookPriceAndRating(),
+          ],
+        ),
       ],
     );
   }
