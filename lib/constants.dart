@@ -13,6 +13,11 @@ class Style {
   static const textStyle16 = TextStyle(
     fontSize: 16,
   );
+ static const textStyle18 = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+    color: Colors.white
+  );
 
   static const textStyle20 = TextStyle(
     fontWeight: FontWeight.bold,

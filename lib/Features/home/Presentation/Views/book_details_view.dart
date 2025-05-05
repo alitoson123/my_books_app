@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_books/Core/Widgets/text_button.dart';
 import 'package:my_books/Features/home/Presentation/Views/Wedgits/book_price_and_rating.dart';
+import 'package:my_books/Features/home/Presentation/Views/Wedgits/books_action.dart';
 import 'package:my_books/Features/home/Presentation/Views/Wedgits/image_container.dart';
 import 'package:my_books/constants.dart';
 
@@ -31,19 +33,19 @@ class BookDetailsView extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(
-              height: 290,
+              height: 230,
               child: ImageContainer(
                 myImage:
                     'assets/Images/61wADuboi4L._AC_UY327_FMwebp_QL65_.webp',
-                myWidth: 180,
+                myWidth: 155,
               ),
-            ),  SizedBox(
+            ),
+            SizedBox(
               height: 16,
             ),
             Text(
               'The 7 habits of highly effective people',
-              style:
-                  Style.textStyle22.copyWith(fontFamily: 'PlayfairDisplay'),
+              style: Style.textStyle22.copyWith(fontFamily: 'PlayfairDisplay'),
               maxLines: 2,
               textAlign: TextAlign.center,
               overflow: TextOverflow.ellipsis,
@@ -59,7 +61,13 @@ class BookDetailsView extends StatelessWidget {
             SizedBox(
               height: 8,
             ),
-            BookPriceAndRating(mainAxisAlignment: MainAxisAlignment.center,),
+            BookPriceAndRating(
+              mainAxisAlignment: MainAxisAlignment.center,
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            BooksAction(),
           ],
         ),
       ),
