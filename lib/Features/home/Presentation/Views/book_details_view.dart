@@ -3,6 +3,7 @@ import 'package:my_books/Core/Widgets/text_button.dart';
 import 'package:my_books/Features/home/Presentation/Views/Wedgits/book_price_and_rating.dart';
 import 'package:my_books/Features/home/Presentation/Views/Wedgits/books_action.dart';
 import 'package:my_books/Features/home/Presentation/Views/Wedgits/image_container.dart';
+import 'package:my_books/Features/home/Presentation/Views/Wedgits/similar_list_view_images.dart';
 import 'package:my_books/constants.dart';
 
 class BookDetailsView extends StatelessWidget {
@@ -30,45 +31,63 @@ class BookDetailsView extends StatelessWidget {
         ),
       ),
       body: Center(
-        child: Column(
-          children: [
-            SizedBox(
-              height: 230,
-              child: ImageContainer(
-                myImage:
-                    'assets/Images/61wADuboi4L._AC_UY327_FMwebp_QL65_.webp',
-                myWidth: 155,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8),
+          child: Column(
+            children: [
+              SizedBox(
+                height: 230,
+                child: ImageContainer(
+                  myImage:
+                      'assets/Images/61wADuboi4L._AC_UY327_FMwebp_QL65_.webp',
+                  myWidth: 155,
+                ),
               ),
-            ),
-            SizedBox(
-              height: 16,
-            ),
-            Text(
-              'The 7 habits of highly effective people',
-              style: Style.textStyle22.copyWith(fontFamily: 'PlayfairDisplay'),
-              maxLines: 2,
-              textAlign: TextAlign.center,
-              overflow: TextOverflow.ellipsis,
-            ),
-            SizedBox(
-              height: 5,
-            ),
-            Text(
-              'Stephen R.Covey',
-              style: Style.textStyle16,
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(
-              height: 8,
-            ),
-            BookPriceAndRating(
-              mainAxisAlignment: MainAxisAlignment.center,
-            ),
-            SizedBox(
-              height: 25,
-            ),
-            BooksAction(),
-          ],
+              SizedBox(
+                height: 16,
+              ),
+              Text(
+                'The 7 habits of highly effective people',
+                style:
+                    Style.textStyle22.copyWith(fontFamily: 'PlayfairDisplay'),
+                maxLines: 2,
+                textAlign: TextAlign.center,
+                overflow: TextOverflow.ellipsis,
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              Text(
+                'Stephen R.Covey',
+                style: Style.textStyle16,
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(
+                height: 8,
+              ),
+              BookPriceAndRating(
+                mainAxisAlignment: MainAxisAlignment.center,
+              ),
+              SizedBox(
+                height: 25,
+              ),
+              BooksAction(),
+              SizedBox(
+                height: 16,
+              ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'You can also like',
+                  style: Style.textStyle18.copyWith(color: Colors.black),
+                ),
+              ),
+              SizedBox(
+                height: 12,
+              ),
+              similarListViewImages(),
+            ],
+          ),
         ),
       ),
     );

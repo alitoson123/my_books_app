@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_books/constants.dart';
 
-
 void main() {
   runApp(const MyBooks());
 }
@@ -23,5 +22,3 @@ class MyBooks extends StatelessWidget {
     );
   }
 }
-
-

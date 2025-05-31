@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:my_books/constants.dart';
 
 PreferredSizeWidget myAppBar() {
@@ -13,8 +14,14 @@ PreferredSizeWidget myAppBar() {
           Images.logo,
           width: 120,
         ),
-        IconButton(onPressed: () {}, icon: Icon(Icons.search))
+        IconButton(
+            onPressed: () {
+               GoRouter.of(context).push(KSearchViewPath);
+                GoRouter.of(context).push(KBookDetailsPath);
+            },
+            icon: Icon(Icons.search))
       ],
     ),
   );
 }
+*/

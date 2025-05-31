@@ -12,7 +12,6 @@ class BookPriceAndRating extends StatelessWidget {
     return Row(
       mainAxisAlignment: mainAxisAlignment,
       children: [
-        
         Icon(
           Icons.star,
           color: Color(0xffFDD835),

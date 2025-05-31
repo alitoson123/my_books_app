@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:my_books/Features/Search/Presentation/views/search_view.dart';
 import 'package:my_books/Features/Splash/Presentation/Views/splash_view.dart';
 import 'package:my_books/Features/home/Presentation/Views/book_details_view.dart';
 import 'package:my_books/Features/home/Presentation/Views/home_view.dart';
@@ -13,11 +14,8 @@ class Style {
   static const textStyle16 = TextStyle(
     fontSize: 16,
   );
- static const textStyle18 = TextStyle(
-    fontSize: 18,
-    fontWeight: FontWeight.bold,
-    color: Colors.white
-  );
+  static const textStyle18 =
+      TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white);
 
   static const textStyle20 = TextStyle(
     fontWeight: FontWeight.bold,
@@ -43,6 +41,10 @@ class AppRouter {
         path: KBookDetailsPath,
         builder: (context, state) => BookDetailsView(),
       ),
+      GoRoute(
+        path: KSearchViewPath,
+        builder: (context, state) => SearchView(),
+      ),
     ],
   );
 }
@@ -51,3 +53,4 @@ const KbackgroudColor = Color(0xffFBFDFB);
 const Kduration = Duration(milliseconds: 2);
 const KHomePath = '/homeView';
 const KBookDetailsPath = '/bookDetailsView';
+const KSearchViewPath = '/SearchView';
