@@ -7,9 +7,12 @@ import 'package:my_books/Features/home/Data/repos/home_repo.dart';
 
 class HomeRepoImpl implements HomeRepo {
   @override
+  final ApiService apiService;
+
+  HomeRepoImpl(this.apiService);
   Future<Either<Failure, List<BookModel>>> fetchNewestBooks() async {
     try {
-      Map<String, dynamic> data = await ApiService().getBooks(
+      Map<String, dynamic> data = await apiService.getBooks(
           endpoints:
               'volumes?Filtering=free-ebooks&Sorting=newest&q=subject:programming');
 
@@ -31,7 +34,7 @@ class HomeRepoImpl implements HomeRepo {
   @override
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
     try {
-      Map<String, dynamic> data = await ApiService().getBooks(
+      Map<String, dynamic> data = await apiService.getBooks(
           endpoints: 'volumes?Filtering=free-ebooks&q=subject:programming');
 
       List<BookModel> bookList = [];
