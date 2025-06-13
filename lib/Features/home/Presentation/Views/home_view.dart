@@ -32,12 +32,13 @@ class HomeView extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20, top: 7, bottom: 7),
         child: CustomScrollView(
+          physics: const BouncingScrollPhysics(),
           slivers: [
             SliverToBoxAdapter(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  ListViewImages(),
+                  FeaturedListView(),
                   SizedBox(
                     height: 20,
                   ),
@@ -52,7 +53,7 @@ class HomeView extends StatelessWidget {
               ),
             ),
             SliverFillRemaining(
-              child: ListViewBestSeller(),
+              child: ListViewNewestSeller(),
             )
           ],
         ),

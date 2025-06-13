@@ -37,9 +37,9 @@ class BookDetailsView extends StatelessWidget {
               SizedBox(
                 height: 230,
                 child: ImageContainer(
-                  myImage:
-                      'assets/Images/61wADuboi4L._AC_UY327_FMwebp_QL65_.webp',
                   myWidth: 155,
+                  imageUrl:
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUNVld5ZvPS1ASw4QFkZw3lbH-m5fRh1pjLA&s',
                 ),
               ),
               SizedBox(
@@ -64,9 +64,9 @@ class BookDetailsView extends StatelessWidget {
               SizedBox(
                 height: 8,
               ),
-              BookPriceAndRating(
+            /*  BookPriceAndRating(
                 mainAxisAlignment: MainAxisAlignment.center,
-              ),
+              ),*/
               SizedBox(
                 height: 25,
               ),

@@ -1,22 +1,22 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class ImageContainer extends StatelessWidget {
   const ImageContainer(
-      {super.key, required this.myImage, required this.myWidth});
+      {super.key,  required this.myWidth, required this.imageUrl});
 
-  final String myImage;
   final double myWidth;
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: myWidth,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-        image: DecorationImage(
-          fit: BoxFit.cover,
-          image: AssetImage(myImage),
-        ),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(16),
+      child: CachedNetworkImage(
+        width: myWidth,
+        imageUrl: imageUrl,
+        fit: BoxFit.cover,
+        errorWidget: (context, url, error) => Icon(Icons.error),
       ),
     );
   }

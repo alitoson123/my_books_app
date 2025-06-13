@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:my_books/Features/home/Data/models/book_model/book_model.dart';
 import 'package:my_books/constants.dart';
 
-class BookPriceAndRating extends StatelessWidget {
-  const BookPriceAndRating({
+class BookRating extends StatelessWidget {
+  const BookRating({
     super.key,
-    this.mainAxisAlignment = MainAxisAlignment.start,
+    this.mainAxisAlignment = MainAxisAlignment.start, required this.bookModel,
   });
   final MainAxisAlignment mainAxisAlignment;
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: mainAxisAlignment,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
+        
         Icon(
           Icons.star,
           color: Color(0xffFDD835),

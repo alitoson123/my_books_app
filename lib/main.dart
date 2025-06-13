@@ -21,13 +21,13 @@ class MyBooks extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => FeaturedBooksCubit(
-            getIt.get<HomeRepoImpl>(),
-          ),
+            getIt.get<HomeRepoImpl>()
+          )..FeaturedBooksCubitMethod(),
         ),
         BlocProvider(
           create: (context) => NewestBookCubit(
             getIt.get<HomeRepoImpl>(),
-          ),
+          )..NewestBookCubitMethod(),
         ),
       ],
       child: MaterialApp.router(

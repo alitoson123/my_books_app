@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:my_books/Features/home/Data/models/book_model/book_model.dart';
 import 'package:my_books/Features/home/Presentation/Views/Wedgits/book_price_and_rating.dart';
 import 'package:my_books/constants.dart';
 
 class BestSellerDescription extends StatelessWidget {
-  const BestSellerDescription({super.key});
+  const BestSellerDescription.NewestSellerDescription(
+      {super.key, required this.bookModel});
 
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -13,7 +16,7 @@ class BestSellerDescription extends StatelessWidget {
         SizedBox(
           width: 200,
           child: Text(
-            'Atomic habits',
+            bookModel.volumeInfo!.title!,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             style: Style.textStyle20.copyWith(
@@ -25,7 +28,7 @@ class BestSellerDescription extends StatelessWidget {
           height: 3,
         ),
         Text(
-          'James clear',
+          bookModel.volumeInfo!.authors![0],
           style: Style.textStyle16,
         ),
         SizedBox(
@@ -34,13 +37,15 @@ class BestSellerDescription extends StatelessWidget {
         Row(
           children: [
             Text(
-              '19.99 \$',
+             'Free',
               style: Style.textStyle20,
             ),
             SizedBox(
               width: 30,
             ),
-            BookPriceAndRating(),
+            BookRating(
+              bookModel: bookModel,
+            ),
           ],
         ),
       ],

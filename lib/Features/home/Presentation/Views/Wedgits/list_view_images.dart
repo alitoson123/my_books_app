@@ -1,26 +1,41 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_books/Core/Widgets/displaying_failure.dart';
+import 'package:my_books/Features/home/Presentation/View_models/featured_books_cubit/featured_books_cubit_cubit.dart';
+import 'package:my_books/Features/home/Presentation/View_models/featured_books_cubit/featured_books_cubit_state.dart';
 import 'package:my_books/Features/home/Presentation/Views/Wedgits/image_container.dart';
 
-class ListViewImages extends StatelessWidget {
-  const ListViewImages({super.key});
+class FeaturedListView extends StatelessWidget {
+  const FeaturedListView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 245,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: 5,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: EdgeInsets.only(right: index == 4 ? 0 : 12),
-            child: ImageContainer(
-              myImage: 'assets/Images/81BE7eeKzAL._AC_UY327_FMwebp_QL65_.webp',
-              myWidth: 150,
+    return BlocBuilder<FeaturedBooksCubit, FeaturedBooksStates>(
+      builder: (context, state) {
+        if (state is SuccessFeaturedBooksState) {
+          return SizedBox(
+            height: 245,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: state.bookList.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: EdgeInsets.only(right: index == 4 ? 0 : 12),
+                  child: ImageContainer(
+                      myWidth: 150,
+                      imageUrl: state.bookList[index].volumeInfo.imageLinks.thumbnail),
+                );
+              },
             ),
           );
-        },
-      ),
+        } else if (state is failureFeaturedBooksState) {
+          return DisplayingFailure(errMessage: state.errMessage);
+        } else {
+          return Center(
+            child: CircularProgressIndicator(),
+          );
+        }
+      },
     );
   }
 }

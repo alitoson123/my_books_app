@@ -23,15 +23,16 @@ class SearchResultListView extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.only(bottom: index == 4 ? 0 : 12),
                   child: ImageContainer(
-                      myImage:
-                          'assets/Images/71mdgnpEkSL._AC_UY327_FMwebp_QL65_.webp',
-                      myWidth: 85),
+                    myWidth: 85,
+                    imageUrl:
+                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUNVld5ZvPS1ASw4QFkZw3lbH-m5fRh1pjLA&s',
+                  ),
                 ),
               ),
               SizedBox(
                 width: 30,
               ),
-              BestSellerDescription(),
+         //     BestSellerDescription.NewestSellerDescription(),
             ],
           ),
         );

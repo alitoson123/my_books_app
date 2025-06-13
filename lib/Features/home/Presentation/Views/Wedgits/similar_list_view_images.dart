@@ -15,8 +15,9 @@ class similarListViewImages extends StatelessWidget {
           return Padding(
             padding: EdgeInsets.only(right: index == 4 ? 0 : 12),
             child: ImageContainer(
-              myImage: 'assets/Images/81BE7eeKzAL._AC_UY327_FMwebp_QL65_.webp',
               myWidth: 80,
+              imageUrl:
+                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUNVld5ZvPS1ASw4QFkZw3lbH-m5fRh1pjLA&s',
             ),
           );
         },

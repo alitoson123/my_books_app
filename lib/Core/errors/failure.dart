@@ -43,8 +43,9 @@ class ServerFailure extends Failure {
     } else if (statusCode == 500) {
       return ServerFailure(
           errMessage: "Internal server error, Please try again");
-    } else
+    } else {
       return ServerFailure(
           errMessage: "opps, there was an error. Please try again");
+    }
   }
 }
