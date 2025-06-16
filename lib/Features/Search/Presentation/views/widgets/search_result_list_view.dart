@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:my_books/Features/home/Presentation/Views/Wedgits/best_seller_description.dart';
 import 'package:my_books/Features/home/Presentation/Views/Wedgits/image_container.dart';
 import 'package:my_books/constants.dart';
 

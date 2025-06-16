@@ -16,7 +16,7 @@ class BestSellerDescription extends StatelessWidget {
         SizedBox(
           width: 200,
           child: Text(
-            bookModel.volumeInfo!.title!,
+            bookModel.volumeInfo.title!,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             style: Style.textStyle20.copyWith(
@@ -28,7 +28,7 @@ class BestSellerDescription extends StatelessWidget {
           height: 3,
         ),
         Text(
-          bookModel.volumeInfo!.authors![0],
+          bookModel.volumeInfo.authors?[0]?? '' ,
           style: Style.textStyle16,
         ),
         SizedBox(
@@ -44,7 +44,7 @@ class BestSellerDescription extends StatelessWidget {
               width: 30,
             ),
             BookRating(
-              bookModel: bookModel,
+             
             ),
           ],
         ),

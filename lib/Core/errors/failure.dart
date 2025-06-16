@@ -28,9 +28,6 @@ class ServerFailure extends Failure {
         return ServerFailure(errMessage: "there is no internet connection");
       case DioExceptionType.unknown:
         return ServerFailure(errMessage: "Unknown error occurred");
-      default:
-        return ServerFailure(
-            errMessage: "opps, there was an error. Please try again");
     }
   }
 

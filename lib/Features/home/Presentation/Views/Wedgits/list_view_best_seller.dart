@@ -23,7 +23,7 @@ class ListViewNewestSeller extends StatelessWidget {
             itemBuilder: (context, index) {
               return GestureDetector(
                 onTap: () {
-                  GoRouter.of(context).push(KBookDetailsPath);
+                  GoRouter.of(context).push(KBookDetailsPath, extra: state.bookList[index]);
                 },
                 child: Row(
                   children: [
@@ -41,7 +41,9 @@ class ListViewNewestSeller extends StatelessWidget {
                     SizedBox(
                       width: 30,
                     ),
-                    BestSellerDescription.NewestSellerDescription(bookModel: state.bookList[index],),
+                    BestSellerDescription.NewestSellerDescription(
+                      bookModel: state.bookList[index],
+                    ),
                   ],
                 ),
               );

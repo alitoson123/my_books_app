@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:my_books/Core/Widgets/displaying_failure.dart';
 import 'package:my_books/Features/home/Presentation/View_models/featured_books_cubit/featured_books_cubit_cubit.dart';
 import 'package:my_books/Features/home/Presentation/View_models/featured_books_cubit/featured_books_cubit_state.dart';
 import 'package:my_books/Features/home/Presentation/Views/Wedgits/image_container.dart';
+import 'package:my_books/constants.dart';
 
 class FeaturedListView extends StatelessWidget {
   const FeaturedListView({super.key});
@@ -21,9 +23,16 @@ class FeaturedListView extends StatelessWidget {
               itemBuilder: (context, index) {
                 return Padding(
                   padding: EdgeInsets.only(right: index == 4 ? 0 : 12),
-                  child: ImageContainer(
-                      myWidth: 150,
-                      imageUrl: state.bookList[index].volumeInfo.imageLinks.thumbnail),
+                  child: GestureDetector(
+                    onTap: () {
+                      GoRouter.of(context)
+                          .push(KBookDetailsPath, extra: state.bookList[index]);
+                    },
+                    child: ImageContainer(
+                        myWidth: 150,
+                        imageUrl: state
+                            .bookList[index].volumeInfo.imageLinks.thumbnail),
+                  ),
                 );
               },
             ),

@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:my_books/Core/Service%20Locator/service_locator.dart';
 import 'package:my_books/Features/Search/Presentation/views/search_view.dart';
 import 'package:my_books/Features/Splash/Presentation/Views/splash_view.dart';
+import 'package:my_books/Features/home/Data/models/book_model/book_model.dart';
+import 'package:my_books/Features/home/Data/repos/home_repo_impl.dart';
+import 'package:my_books/Features/home/Presentation/View_models/similar_books_cubit/similar_books_cubit.dart';
 import 'package:my_books/Features/home/Presentation/Views/book_details_view.dart';
 import 'package:my_books/Features/home/Presentation/Views/home_view.dart';
 
@@ -39,7 +44,10 @@ class AppRouter {
       ),
       GoRoute(
         path: KBookDetailsPath,
-        builder: (context, state) => BookDetailsView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => SimilarBooksCubit(getIt.get<HomeRepoImpl>()),
+          child: BookDetailsView(bookModel: state.extra as BookModel),
+        ),
       ),
       GoRoute(
         path: KSearchViewPath,

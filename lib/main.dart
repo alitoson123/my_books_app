@@ -5,9 +5,11 @@ import 'package:my_books/Core/Service%20Locator/service_locator.dart';
 import 'package:my_books/Features/home/Data/repos/home_repo_impl.dart';
 import 'package:my_books/Features/home/Presentation/View_models/featured_books_cubit/featured_books_cubit_cubit.dart';
 import 'package:my_books/Features/home/Presentation/View_models/newest_book_cubit/newest_book_cubit.dart';
+import 'package:my_books/My_bloc_observer.dart';
 import 'package:my_books/constants.dart';
 
 void main() {
+  Bloc.observer = MyBlocObserver();
   setupServiceLocator();
   runApp(const MyBooks());
 }
@@ -29,6 +31,7 @@ class MyBooks extends StatelessWidget {
             getIt.get<HomeRepoImpl>(),
           )..NewestBookCubitMethod(),
         ),
+        
       ],
       child: MaterialApp.router(
         routerConfig: AppRouter.router,

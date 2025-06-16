@@ -14,7 +14,7 @@ class HomeRepoImpl implements HomeRepo {
     try {
       Map<String, dynamic> data = await apiService.getBooks(
           endpoints:
-              'volumes?Filtering=free-ebooks&Sorting=newest&q=subject:programming');
+              'volumes?Filtering=free-ebooks&Sorting=newest&q=sports');
 
       List<BookModel> bookList = [];
 
@@ -35,7 +35,28 @@ class HomeRepoImpl implements HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
     try {
       Map<String, dynamic> data = await apiService.getBooks(
-          endpoints: 'volumes?Filtering=free-ebooks&q=subject:programming');
+          endpoints: 'volumes?Filtering=free-ebooks&Sorting=relevance&q=sports');
+
+      List<BookModel> bookList = [];
+
+      for (var items in data['items']) {
+        bookList.add(BookModel.fromJson(items));
+      }
+      return right(bookList);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioException(e));
+      } else {
+        return left(ServerFailure(errMessage: e.toString()));
+      }
+    }
+  }
+  
+  @override
+  Future<Either<Failure, List<BookModel>>> fetchSimilarBooks() async {
+   try {
+      Map<String, dynamic> data = await apiService.getBooks(
+          endpoints: 'volumes?Filtering=free-ebooks&q=subject:sports');
 
       List<BookModel> bookList = [];
 
